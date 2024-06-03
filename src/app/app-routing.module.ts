@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'movie/:id', 
     component: MoviePageComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   }
 ];
 
