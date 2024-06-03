@@ -1,0 +1,104 @@
+.watchlist-container {
+    display: flex;
+    align-items: flex-start;
+    text-align: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    background-color: #271e36;
+    z-index: 9999;
+    overflow-y: auto;
+  
+    @media screen and (max-width: 768px) {
+      width: 100%;
+    }
+  
+    .container-btn {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      padding: 1rem;
+      width: 100%;
+  
+      .close-button {
+        border: none;
+        background-color: transparent;
+  
+        img {
+          height: 20px;
+          width: 20px;
+        }
+      }
+    }
+  
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 1rem;
+    }
+  
+    ul {
+      list-style-type: none;
+      margin-top: 2rem;
+      padding: 0;
+  
+      .movie-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+  
+        img {
+          height: 15rem;
+          width: 10rem;
+          border-radius: 5px;
+        }
+  
+        .container-title {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.5rem;
+  
+          span {
+            font-size: 14px;
+            font-weight: 700;
+          }
+  
+          button {
+            border: none;
+            background-color: transparent;
+  
+            img {
+              height: 20px;
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  /* Adicionando estilo para centralizar os cards */
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .movie-item {
+    width: 100%;
+  }
+  
+  /* Adicione outros estilos conforme necessário */
+  
+  @media screen and (max-width: 768px) {
+    .watchlist-container {
+      width: 100%;
+    }
+  }

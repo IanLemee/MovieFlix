@@ -1,0 +1,19 @@
+<div class="watchlist-container" *ngIf="isWatchlistVisible()">
+  <div class="container-btn">
+    <h2>Watchlist</h2>
+    <button class="close-button" (click)="toggleWatchlistVisibility()">
+      <img src="assets/images/icons/close.svg" alt="">
+    </button>
+  </div>
+  <ul>
+    <li *ngFor="let movie of getWatchlist()">
+      <div class="movie-item">
+        <img [src]="movie.image" alt="{{ movie.title }}">
+        <div class="container-title">
+          <span>{{ movie.title }}</span>
+          <button (click)="markAsWatched(movie)"><img src="assets/images/icons/check.svg" alt=""></button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

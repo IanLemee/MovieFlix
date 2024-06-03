@@ -1,0 +1,52 @@
+@import 'variables.scss';
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 1.25rem 1.9rem;
+  background-color: transparent;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  
+    .container_title {
+      a {
+        text-decoration: none;
+        color: $font-color;
+        font-size: 30px;
+        font-weight: 700;
+      }
+    }
+  
+    .container_list {
+      ul {
+        display: flex;
+        gap: 1.25rem;
+        list-style-type: none;
+  
+        li {
+          a {
+            text-decoration: none;
+            font-size: 20px;
+            color: $font-color;
+            font-weight: 600;
+          }
+  
+          button {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  }

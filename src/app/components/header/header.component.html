@@ -1,0 +1,17 @@
+<header class="container">
+    <div class="container_title">
+        <a [routerLink]="['/home']">MoviesFlix</a>
+    </div>
+    <div class="container_list">
+        <ul>
+            <li><a [routerLink]="['/home']">Movies</a></li>
+            <li>
+                <button (click)="openWatchList()">
+                    <img src="assets/images/icons/watchlisticon.svg" alt="">
+                  </button>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<app-watchlist *ngIf="watchlistService.isWatchlistVisible()"></app-watchlist>

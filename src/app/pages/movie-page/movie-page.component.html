@@ -1,0 +1,36 @@
+<div class="container movie-details-page" *ngIf="movieDetails">
+  <div class="container-image">
+    <img [src]="movieDetails.image" alt="{{ movieDetails.title }}">
+    <p>{{ movieDetails.date }}</p>
+    <p>{{ movieDetails.genre }}</p>
+  </div>
+  <div class="container-title">
+    <h1>{{ movieDetails.title }}</h1>
+    <h2>{{ movieDetails.description }}</h2>
+    <h3>Duration: {{ movieDetails.duration }} </h3>
+    <div class="trailer">
+      <iframe
+        [src]="getEmbedUrl(movieDetails.trailer) | safe"
+        frameborder="0"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="buttons">
+      <button (click)="addToWatchList(movie)">
+        WatchList
+        <img src="assets/images/icons/watch.svg" alt="">
+      </button>
+    </div>
+    <div class="movie-links">
+      <ng-container *ngFor="let movie of moviesService.getMovies()">
+        <div *ngIf="movie.id !== movieDetails.id; else elseBlock">
+          <a [routerLink]="['/movie', movie.id]">
+            <img [src]="movie.image" alt="{{ movie.title }}">
+          </a>
+        </div>
+      </ng-container>
+      <ng-template #elseBlock></ng-template>
+    </div>
+  </div>
+</div>
+  
